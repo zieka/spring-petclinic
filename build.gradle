@@ -6,7 +6,7 @@ plugins {
 
 apply plugin: 'java'
 
-group = 'org.springframework.samples'
+group = 'org.moderne.samples'
 version = '2.7.3'
 sourceCompatibility = '11'
 
