@@ -35,7 +35,7 @@ public class ValidatorTests {
 
         Validator validator = createValidator();
         Set<ConstraintViolation<Person>> constraintViolations = validator
-                .validate(person);
+            .validate(person);
 
         assertThat(constraintViolations.size()).isEqualTo(1);
         ConstraintViolation<Person> violation = constraintViolations.iterator().next();
