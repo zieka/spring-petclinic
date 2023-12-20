@@ -70,7 +70,7 @@ public class OwnerControllerTests {
             .param("city", "London")
             .param("telephone", "01316761638")
         )
-            .andExpect(status().is3xxRedirection());
+        .andExpect(status().is3xxRedirection());
     }
 
     @Test
@@ -80,7 +80,7 @@ public class OwnerControllerTests {
             .param("lastName", "Bloggs")
             .param("city", "London")
         )
-            .andExpect(status().isOk())
+        .andExpect(status().isOk())
             .andExpect(model().attributeHasErrors("owner"))
             .andExpect(model().attributeHasFieldErrors("owner", "address"))
             .andExpect(model().attributeHasFieldErrors("owner", "telephone"))
@@ -109,7 +109,7 @@ public class OwnerControllerTests {
         mockMvc.perform(get("/owners")
             .param("lastName", "Franklin")
         )
-            .andExpect(status().is3xxRedirection())
+        .andExpect(status().is3xxRedirection())
             .andExpect(view().name("redirect:/owners/" + TEST_OWNER_ID));
     }
 
@@ -118,7 +118,7 @@ public class OwnerControllerTests {
         mockMvc.perform(get("/owners")
             .param("lastName", "Unknown Surname")
         )
-            .andExpect(status().isOk())
+        .andExpect(status().isOk())
             .andExpect(model().attributeHasFieldErrors("owner", "lastName"))
             .andExpect(model().attributeHasFieldErrorCode("owner", "lastName", "notFound"))
             .andExpect(view().name("owners/findOwners"));
@@ -146,7 +146,7 @@ public class OwnerControllerTests {
             .param("city", "London")
             .param("telephone", "01616291589")
         )
-            .andExpect(status().is3xxRedirection())
+        .andExpect(status().is3xxRedirection())
             .andExpect(view().name("redirect:/owners/{ownerId}"));
     }
 
@@ -157,7 +157,7 @@ public class OwnerControllerTests {
             .param("lastName", "Bloggs")
             .param("city", "London")
         )
-            .andExpect(status().isOk())
+        .andExpect(status().isOk())
             .andExpect(model().attributeHasErrors("owner"))
             .andExpect(model().attributeHasFieldErrors("owner", "address"))
             .andExpect(model().attributeHasFieldErrors("owner", "telephone"))
