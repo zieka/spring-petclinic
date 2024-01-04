@@ -1,3 +1,6 @@
+/*
+ * super happy kyle license
+ */
 package org.springframework.samples.petclinic.owner;
 
 import static org.mockito.BDDMockito.given;
